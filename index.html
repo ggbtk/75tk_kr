@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta property="og:title" content="치로티켓"/>
+<meta property="og:description" content="365일 24시간 연중무휴 모바일상품권 안심거래 정식등록업체 치로티켓"/>
+<meta name="description" content="365일 24시간 연중무휴 모바일상품권 안심거래 정식등록업체 치로티켓"/>
+<meta name="keywords" content="365일 24시간 연중무휴 모바일상품권 안심거래 정식등록업체 치로티켓"/>
+<title>치로티켓</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="./css/common.css"/>
+<link rel="stylesheet" href="./css/global.css"/>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/global.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+
+<script>
+    function resizeMap() {
+        const img = document.querySelector('img[usemap="#map01"]');
+        const map = document.querySelector('map[name="map01"]');
+        const areas = map.querySelectorAll('area');
+
+        if (!img || !map || !areas.length) return;
+
+        const imgWidth = img.naturalWidth; // 이미지 원본 너비
+        const imgHeight = img.naturalHeight; // 이미지 원본 높이
+        const renderedWidth = img.offsetWidth; // 렌더링된 이미지 너비
+        const renderedHeight = img.offsetHeight; // 렌더링된 이미지 높이
+
+        const scaleWidth = renderedWidth / imgWidth;
+        const scaleHeight = renderedHeight / imgHeight;
+
+        areas.forEach((area) => {
+            const originalCoords = area.dataset.originalCoords || area.coords;
+            if (!area.dataset.originalCoords) {
+                area.dataset.originalCoords = originalCoords; // 원래 좌표 저장
+            }
+
+            const coords = originalCoords.split(',').map(Number);
+            const scaledCoords = coords.map((coord, index) =>
+                index % 2 === 0 ? coord * scaleWidth : coord * scaleHeight
+            );
+
+            area.coords = scaledCoords.join(',');
+        });
+    }
+
+    // 이벤트 리스너 등록
+    window.addEventListener('resize', resizeMap);
+    window.addEventListener('load', resizeMap);
+</script>
+
+
+<div id="wrap">
+    <!--    
+	<div class="main_popup">
+	  <div class="layer_cont">
+	    <div class="img_wrap">
+	      <img src="/images/popup.jpg" />
+	    </div>
+	    <div class="btn_wrap">
+	      <button class="btn_today_close"><span>오늘 하루 보지 않기</span></button>
+	      <button class="btn_close">close</button>
+	    </div>
+	  </div>
+	</div>
+    -->
+
+	<div id="tk01">
+		<div class="inner">
+			<div class="txt" data-aos="fade-up" data-aos-delay="0">
+				<img src="images/img_1.png"  usemap="#map01" alt="">
+			</div>
+		</div>
+	</div>
+
+
+	<div id="tk02" >
+		<div class="inner">
+			<div class="txt">
+				<img src="images/img_2.png"  usemap="#map01" alt="">
+			</div>
+		</div>
+	</div>
+
+	<div id="tk03">
+		<div class="inner">
+			<div class="txt">
+				<img src="images/img_3.png" alt="">
+			</div>
+		</div>
+	</div>
+
+	<div id="tk04">
+		<div class="inner">
+			<div class="txt">
+				<img src="images/img_4.png"  usemap="#map01" alt="">
+			</div>
+		</div>
+	</div>
+
+	<div id="tk06">
+		<div class="inner">
+			<div class="txt" data-aos="fade-up" data-aos-delay="0">
+				<img src="images/img_5.png"  usemap="#map01" alt="">
+			</div>
+		</div>
+	</div>
+
+	<div id="tk07" class="_scr">
+		<div class="inner">
+			<div class="txt" data-aos="fade-up" data-aos-delay="0">
+				<img src="images/img_6.png"alt="">
+			</div>
+		</div>
+	</div>
+	<div id="tk07" class="_scr">
+		<div class="inner">
+			<div class="txt" data-aos="fade-up" data-aos-delay="0">
+				<img src="images/img_7.png"  usemap="#map01" alt="">
+			</div>
+		</div>
+	</div>
+
+<map name = "map01" id="map01">
+    <area target="" alt="" title="" href="http://qr.kakao.com/talk/Tjt.WKN8.kMA1.QbUyD7Z9dyfyY-" coords="0,967,433,1099" shape="rect">
+    <area target="" alt="" title="" href="tel:010-8070-1176" coords="435,967,859,1099" shape="rect">
+</map>
+
+
+	<footer id="footer">
+		<div class="foot">
+			<div class="inner">
+				<address>
+					<span>상호 : 치로티켓</span> <span>대표전화 : 010-8070-1176</span><span>대표자명 : 진홍준</span><br>
+					<span>카카오톡 ID : 75TK </span>
+					<span>COPYRIGHT © 치로티켓)  ALL RIGHTS RESERVED</span>
+				</address>
+			</div>
+		</div>
+	</footer>
+</div>
+
+
+
+<script type="text/javascript">
+  var toggleMainPopup = function() {
+
+    /* 쿠키 제어 함수 정의 */
+    var handleCookie = {
+      // 쿠키 쓰기
+      // 이름, 값, 만료일
+      setCookie: function(name, val, exp) {
+        var date = new Date();
+
+        // 만료 시간 구하기(exp를 ms단위로 변경)
+        date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+        console.log(name + "=" + val + ";expires=" + date.toUTCString() + ";path=/");
+
+        // 실제로 쿠키 작성하기
+        document.cookie = name + "=" + val + ";expires=" + date.toUTCString() + ";";
+      },
+      // 쿠키 읽어오기(정규식 이용해서 가져오기)
+      getCookie: function(name) {
+        var value = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+        return value ? value[2] : null;
+      }
+    };
+    console.log(handleCookie.getCookie("today"));
+
+    // 쿠키 읽고 화면 보이게
+    if (handleCookie.getCookie("today") == "y") {
+      $(".main_popup").removeClass("on");
+    } else {
+      $(".main_popup").addClass("on");
+    }
+
+    // 오늘하루 보지 않기 버튼
+    $(".main_popup").on("click", ".btn_today_close", function() {
+      handleCookie.setCookie("today", "y", 1);
+      $(this).parents(".main_popup.on").removeClass("on");
+    });
+
+    // 일반 버튼
+    $(".main_popup").on("click", ".btn_close", function() {
+      $(this).parents(".main_popup.on").removeClass("on");
+    });
+  }
+
+  $(function() {
+    toggleMainPopup();
+  });
+</script>
+
+</body>
+</html>
